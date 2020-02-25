@@ -1,5 +1,5 @@
 # kynan
-kynan website
+kynan puru watt website
 
 http://kynan.pw
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<defs>
+<font id="all-my-links2" horiz-adv-x="1000" >
+<font-face font-family="all-my-links2" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="i109" unicode="&#xe701;" d="M500 558a211 211 0 0 0 208-208 202 202 0 0 0-15-76l122-122a493 493 0 0 1 143 198 493 493 0 0 1-458 313 485 485 0 0 1-167-30l90-90a202 202 0 0 0 77 15z m-364 152a38 38 0 0 1-26-64l68-69 20-19a492 492 0 0 1-156-208 493 493 0 0 1 641-277l17-18 96-95a38 38 0 0 1 53 53l-686 686a37 37 0 0 1-27 11z m178-268l64-65a118 118 0 0 1-3-27 125 125 0 0 1 125-125 118 118 0 0 1 27 3l65-64a208 208 0 0 0-278 278z m179 33l132-132 0 7a125 125 0 0 1-125 125z" horiz-adv-x="1000" />
+
+<glyph glyph-name="i108" unicode="&#xe702;" d="M500 663a493 493 0 0 1-458-313 493 493 0 0 1 916 0 493 493 0 0 1-458 313z m0-521a208 208 0 1 0 208 208 208 208 0 0 0-208-208z m0 333a125 125 0 1 1 125-125 125 125 0 0 1-125 125z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

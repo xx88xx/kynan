@@ -1,0 +1,31 @@
+#infos {
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    padding: ($padding-text - 0.3) $padding-text $padding-text;
+    p {
+        margin: 0;
+        margin-bottom: 1em;
+    }
+    @include below($md) {
+        font-size: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        padding: $padding;
+    }
+    @include above($md + 1) {
+        display: flex;
+        justify-content: space-between;
+        line-height: 1.1;
+    }
+}
+#about {
+    @include above($md + 1) {
+        max-width: 21ch;
+    }
+}
+#contact {
+    @include below($md) {
+        margin-top: 1em;
+    }
+}

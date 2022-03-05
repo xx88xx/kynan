@@ -1,0 +1,12 @@
+body {
+    background: $primary;
+    color: $secondary;
+}
+
+[page-type=about],
+[page-type=about] body,
+.is-leaving.to-about body,
+.is-leaving.to-abouthtml body {
+  background: $secondary;
+  color: $primary;
+}

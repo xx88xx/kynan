@@ -1,0 +1,8 @@
+@mixin hideselect {
+    backface-visibility: hidden;
+    user-select: none;
+    transform-style: flat;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-drag: none;
+    outline: 0;
+}

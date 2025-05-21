@@ -118,7 +118,7 @@
         s.position.z += Math.sin(t*0.2 + i*2) * 0.4;
       });
       if(seizure){
-        const flicker = Math.random() > 0.5;
+        const flicker = Math.random() > 1;
         renderer.setClearColor(flicker ? new THREE.Color('#39FF14') : new THREE.Color('white'), 1);
       }
       t += 0.1;
@@ -126,7 +126,7 @@
     }
     animate();
 
-    setTimeout(() => { formed = true; }, 2500);
+    setTimeout(() => { formed = true; }, 1000);
     setTimeout(() => { window.location.href = 'https://www.youtube.com/watch?v=DXUoMJs80RQ'; }, 1000);
 
     window.addEventListener('resize', ()=>{

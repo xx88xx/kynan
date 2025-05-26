@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>[~*~]output</title>
   <style>
     html, body {
@@ -10,18 +10,13 @@
       overflow: hidden;
       background: black;
       cursor: none;
-    }
-    canvas {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     #warning {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       color: red;
       font-size: 6vw;
       font-family: Helvetica, Arial, sans-serif;
@@ -31,22 +26,50 @@
         0 0 8px rgba(255,0,0,0.6),
         0 0 12px rgba(255,0,0,0.4);
       pointer-events: none;
-      z-index: 10;
+      user-select: none;
+      max-width: 90vw;
+      text-align: center;
+    }
+    canvas {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
   </style>
 </head>
 <body>
-  <div id="warning">figuring out which link</div>
+  <div id="warning">loading...</div>
+
   <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
   <script>
+    // Array of messages to pick randomly
+    const messages = [
+      'hmmmm figuring out which link',
+      'a moment of silence with your phone... finding link',
+      'incoming link - please wait (currency=time)',
+      'constructing link from selfie camera',
+      'ahhhhhhhhhhhhh some red text',
+      'tiktok.com for people who like red text',
+      'constructing link from your heartbeat'
+    ];
+
     function randomCase(str) {
       return str.split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c.toLowerCase()).join('');
     }
+
     const warningDiv = document.getElementById('warning');
+
+    // Pick one random message at load time
+    const chosenMessage = messages[Math.floor(Math.random() * messages.length)];
+
+    // Update the warning text every 100ms with random casing on the chosen message
     setInterval(() => {
-      warningDiv.textContent = randomCase(' hmmmm figuring out which link');
+      warningDiv.textContent = randomCase(chosenMessage);
     }, 100);
 
+    // THREE.js setup for background animation
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(90, window.innerWidth/window.innerHeight, 0.1, 2000);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -118,8 +141,9 @@
         s.position.z += Math.sin(t*0.2 + i*2) * 0.4;
       });
       if(seizure){
-        const flicker = Math.random() > 1;
-        renderer.setClearColor(flicker ? new THREE.Color('black') : new THREE.Color('black'), 1);
+        // Flicker effect disabled, original code had bug (random > 1 never true)
+        // Keep background black
+        renderer.setClearColor(new THREE.Color('black'), 1);
       }
       t += 0.1;
       renderer.render(scene, camera);
@@ -127,11 +151,12 @@
     animate();
 
     setTimeout(() => { formed = true; }, 1000);
-    setTimeout(() => { window.location.href = 'https://www.youtube.com/watch?v=DXUoMJs80RQ'; }, 1000);
+    setTimeout(() => { window.location.href = 'https://www.youtube.com/watch?v=DXUoMJs80RQ'; }, 2000); // 2 seconds so they see message
 
     window.addEventListener('resize', ()=>{
       camera.aspect = window.innerWidth/window.innerHeight;
-      camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight);
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
     });
   </script>
 </body>
